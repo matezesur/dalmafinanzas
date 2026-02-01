@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test del inversor | Dalma Flores</title>
+  <meta name="author" content="Dalma Flores" />
+  <meta name="description" content="Realizá un test sencillo para conocer tu perfil de inversor y 
+  entender qué tipo de estrategia puede adaptarse mejor a vos." />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-custom d-flex align-items-center justify-content-between">
+        <a class="navbar-brand" href="index.html">
+          Dalma<span class="fw-light">Flores</span>
+        </a>
+
+        <button class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarPrincipal" 
+                aria-controls="navbarPrincipal" 
+                aria-expanded="false" 
+                aria-label="Alternar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="sobre-mi.html">Sobre mí</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link active" href="test-inversor.html">Test del inversor</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq.html">Preguntas frecuentes</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-custom page-with-offset" role="main">
+    <!-- HERO del test -->
+    <section class="section section--white test-hero reveal">
+      <h1 class="section-title">Test del inversor</h1>
+      <p class="section-subtitle">
+        Este test no reemplaza una reunión, pero te ayuda a tener una idea inicial de tu perfil de inversor.
+        Son pocas preguntas y la idea es que las respondas según lo que harías en la vida real.
+      </p>
+      <p class="small text-muted mb-0">Al final vas a ver un resultado 
+      orientativo (Conservador, Moderado o Agresivo).</p>
+    </section>
+
+    <!-- CONTENEDOR DEL TEST -->
+    <section id="test-inversor" 
+             class="section section--white test-layout reveal" 
+             aria-label="Preguntas del test de inversor">
+      <div class="test-card">
+        <p class="test-step-label">Pregunta <span id="test-paso-actual">1</span> de <span id="test-total-pasos">5</span></p>
+        <h2 id="test-pregunta-texto" class="test-question-text">
+          <!-- Pregunta actual (JS) -->
+        </h2>
+
+        <div id="test-opciones" class="test-options">
+          <!-- Opciones (JS) -->
+        </div>
+
+        <button id="test-boton-continuar" class="btn-primary-custom test-button">
+          Continuar
+        </button>
+
+        <div class="test-progress" aria-hidden="true">
+          <span class="test-progress-step test-progress-step--active"></span>
+          <span class="test-progress-step"></span>
+          <span class="test-progress-step"></span>
+          <span class="test-progress-step"></span>
+          <span class="test-progress-step"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTADO DEL TEST -->
+    <section id="test-resultado" 
+             class="section section--muted test-result-section" 
+             aria-label="Resultado de tu perfil de inversor">
+      <div class="test-result-card">
+        <h2 class="section-title mb-2">Tu perfil de inversor</h2>
+        <p class="section-subtitle" id="test-resultado-etiqueta">
+          <!-- Ej: Sos un inversor Conservador -->
+        </p>
+        <p id="test-resultado-descripcion">
+          <!-- Descripción generada por JS -->
+        </p>
+
+        <div class="test-result-next mt-3">
+          <p class="mb-2">
+            Este resultado es solo un punto de partida. Si querés trabajar un plan de inversión real, 
+            adaptado a tu situación, podemos verlo juntos en una reunión.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="index.html#contacto" class="btn-primary-custom">Quiero que conversemos sobre mi perfil</a>
+            <a id="test-cta-whatsapp" href="https://wa.me/5491162161818" target="_blank" rel="noopener" class="btn-outline-custom">Escribirme por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container-custom d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
+      <p class="mb-0">&copy; <span id="anio-actual"></span> Dalma Flores.</p>
+      <p class="mb-0">Test de perfil de inversor orientativo. No constituye una recomendación de inversión.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

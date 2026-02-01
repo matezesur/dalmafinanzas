@@ -1,0 +1,275 @@
+// _components.scss
+
+/* Botones */
+.btn-primary-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: $secondary;
+  color: #022c22;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: $shadow-soft;
+    background: lighten($secondary, 4%);
+  }
+}
+
+.btn-outline-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: transparent;
+  color: $surface;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+
+  &:hover {
+    background: rgba(15, 23, 42, 0.2);
+  }
+}
+
+/* Animaciones de aparición */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grids y cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-service {
+  @include card;
+  padding: 18px;
+
+  h3,
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $muted;
+    margin-bottom: 8px;
+  }
+
+  ul {
+    padding-left: 18px;
+    margin: 0;
+
+    li {
+      font-size: 0.9rem;
+      color: $muted;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+/* Pasos */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.step {
+  @include card;
+  padding: 16px;
+
+  &__number {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.1);
+    color: $secondary;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $muted;
+  }
+}
+
+/* Formulario de contacto */
+.form-contact {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.9);
+    padding: 10px 12px;
+    font-size: 0.95rem;
+
+    &:focus {
+      outline: 2px solid rgba(34, 197, 94, 0.4);
+      border-color: $secondary;
+    }
+  }
+
+  small {
+    font-size: 0.8rem;
+    color: $muted;
+  }
+
+  .form-status {
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+}
+
+/* Test del inversor */
+.test-hero {
+  text-align: center;
+}
+
+.test-layout {
+  display: flex;
+  justify-content: center;
+}
+
+.test-card {
+  @include card;
+  max-width: 720px;
+  width: 100%;
+  padding: 24px;
+}
+
+.test-step-label {
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.test-question-text {
+  font-size: 1.3rem;
+  margin: 12px 0 18px;
+}
+
+.test-options {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.test-option {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &-title {
+    font-weight: 600;
+  }
+
+  &-description {
+    font-size: 0.9rem;
+    color: $muted;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    border-color: $secondary;
+    box-shadow: $shadow-soft;
+  }
+
+  &--selected {
+    border-color: $secondary;
+    background: rgba(34, 197, 94, 0.06);
+  }
+}
+
+.test-button {
+  margin-top: 4px;
+}
+
+.test-progress {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+
+  &-step {
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: #d1d5db;
+
+    &--active {
+      background: #22c55e;
+    }
+  }
+}
+
+/* Resultado del test */
+.test-result-section {
+  display: none;
+}
+
+.test-result-card {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.test-result-next p {
+  font-size: 0.95rem;
+}
